@@ -1,4 +1,4 @@
-alert("I tried my best to do this website Dynamic. But after clicking the album the album songs are not loaded on the playlist but We Can listen the songs from clicking the albums. i am trying to fix the remaining.");
+// alert("I tried my best to do this website Dynamic. But after clicking the album the album songs are not loaded on the playlist but We Can listen the songs from clicking the albums. i am trying to fix the remaining.");
 
 let currentsong = new Audio();
 let current_folder;
@@ -10,14 +10,13 @@ function convertSecondsToMinutesAndSeconds(totalSeconds) {
   var seconds = totalSeconds % 60;
 
   seconds = seconds < 10 ? "0" + seconds : seconds;
-
   return minutes + ":" + parseInt(seconds);
 }
 
 // start of js to take all songs
 async function allsongs(folder) {
   current_folder = folder;
-  let a = await fetch(`/${folder}/`);
+  let a = await fetch(`tree/main/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -44,7 +43,7 @@ const playthismusic = (track, pause = false) => {
 };
 
 async function displayalbums() {
-  let a = await fetch(`/songs/`);
+  let a = await fetch(`tree/main/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   let cards = document.querySelector(".cards");
@@ -56,7 +55,7 @@ async function displayalbums() {
     const e = array[index];
     if (e.href.includes("/songs/")) {
       let folder = e.href.split("/").slice(-1)[0];
-      let b = await fetch(`/songs/${folder}/info.json`);
+      let b = await fetch(`tree/main/songs/${folder}/info.json`);
       let jesons = await b.json();
       cards.innerHTML =
         cards.innerHTML +
@@ -84,7 +83,7 @@ async function displayalbums() {
 
 async function main() {
   let folder;
-  let a = await fetch(`/songs/`);
+  let a = await fetch(`tree/main/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
