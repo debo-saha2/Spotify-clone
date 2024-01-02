@@ -17,7 +17,7 @@ function convertSecondsToMinutesAndSeconds(totalSeconds) {
 // start of js to take all songs
 async function allsongs(folder) {
   current_folder = folder;
-  let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+  let a = await fetch(`/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -35,7 +35,7 @@ async function allsongs(folder) {
 // lets play the selected music
 
 const playthismusic = (track, pause = false) => {
-  currentsong.src = `http://127.0.0.1:5500//${current_folder}/` + track;
+  currentsong.src = `//${current_folder}/` + track;
   if (!pause) {
     currentsong.play();
     play.src = "svgs/pause.svg";
@@ -44,7 +44,7 @@ const playthismusic = (track, pause = false) => {
 };
 
 async function displayalbums() {
-  let a = await fetch(`http://127.0.0.1:5500/songs/`);
+  let a = await fetch(`/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   let cards = document.querySelector(".cards");
@@ -56,7 +56,7 @@ async function displayalbums() {
     const e = array[index];
     if (e.href.includes("/songs/")) {
       let folder = e.href.split("/").slice(-1)[0];
-      let b = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+      let b = await fetch(`/songs/${folder}/info.json`);
       let jesons = await b.json();
       cards.innerHTML =
         cards.innerHTML +
@@ -84,7 +84,7 @@ async function displayalbums() {
 
 async function main() {
   let folder;
-  let a = await fetch(`http://127.0.0.1:5500/songs/`);
+  let a = await fetch(`/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
