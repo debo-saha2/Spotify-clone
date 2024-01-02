@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify – Web Player</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left_box">
+          <section class="home_search">
+            <ul>
+              <li>
+                <div>
+                  <ul>
+                    <li><img src="logo.png" alt="" /></li>
+                    <li>Spotify</li>
+                  </ul>
+                  <img class="cross" src="svgs/cross.svg" alt="" />
+                </div>
+              </li>
+              <li>
+                <ul class="gap">
+                  <li><img src="svgs/home.svg" alt="" /></li>
+                  <li>Home</li>
+                </ul>
+              </li>
+              <li>
+                <ul class="gap">
+                  <li><img src="svgs/search.svg" alt="" /></li>
+                  <li>Search</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section class="library">
+            <div class="library_top">
+              <ul>
+                <li>
+                  <ul>
+                    <li><img src="svgs/library.svg" alt="" /></li>
+                    <li>Your Library</li>
+                  </ul>
+                </li>
+                <li><img src="svgs/plus.svg" alt="" /></li>
+              </ul>
+            </div>
+            <div class="songs">
+              <div class="library_playlists">
+                <ul>
+                  <li>
+                    <div></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="left_footer">
+              <a href="https://www.spotify.com/in-en/legal/"
+                ><span>Legal</span></a
+              >
+              <a href="https://www.spotify.com/in-en/privacy/"
+                ><span>Privacy Center</span></a
+              >
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/"
+                ><span>Privacy Policy</span></a
+              >
+              <a href="https://www.spotify.com/in-en/legal/cookies-policy/"
+                ><span>Cookies</span></a
+              >
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"
+                ><span>About Ads</span></a
+              >
+              <a href="https://www.spotify.com/in-en/accessibility/"
+                ><span>Accessibility</span></a
+              >
+            </div>
+          </section>
+        </div>
+        <div class="right_box">
+          <header>
+            <nav class="nav">
+              <ul class="rightnav">
+                <li class="menu"><img src="svgs/menu.svg" alt="" /></li>
+                <li>
+                  <ul class="right_nav_leftside">
+                    <li><button class="btn-arrow"><</button></li>
+                    <li><button class="btn-arrow">></button></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="right_nav_rightside">
+                    <li>
+                      <ul class="right_nav_rightside_section">
+                        <li>Premium</li>
+                        <li>Support</li>
+                        <li class="sp_li">Download</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="signup_login">
+                        <li><button class="btn_signup">Sign up</button></li>
+                        <li><button class="btn_login">Log in</button></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main>
+            <div class="play_list">
+              <h1>Spotify Playlists</h1>
+              <div class="cards"></div>
+              <h6>Click on the Hindi Top Hits to listen all library songs</h6>
+            </div>
+          </main>
+          <footer>
+            <div class="music_player">
+              <div class="music-elements">
+                <div class="music_name">Select A Song</div>
+
+                <div class="icons">
+                  <img id="previous" src="svgs/previous.svg" alt="" />
+                  <img id="play" src="svgs/play.svg" alt="" />
+                  <img id="next" src="svgs/next.svg" alt="" />
+                </div>
+                <div class="song_duration">00:00/00:00</div>
+                <div id="sound">
+                  <img id="volume" src="svgs/volumeon.svg" alt="" />
+                  <input type="range" name="" id="volume_range" />
+                </div>
+              </div>
+              <div class="song_range">
+                <div class="line"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
