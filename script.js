@@ -35,7 +35,7 @@ async function allsongs(folder) {
 // lets play the selected music
 
 const playthismusic = (track, pause = false) => {
-  currentsong.src = `//${current_folder}/` + track;
+  currentsong.src = `/${current_folder}/` + track;
   if (!pause) {
     currentsong.play();
     play.src = "svgs/pause.svg";
